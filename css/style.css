@@ -1,0 +1,21 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  /* grid-column-gap: 1em;
+  grid-row-gap: 1em; */
+  /* grid gap is short for both grid column / row gap */
+  grid-gap: 1em;
+  /* grid golumn/row gap is margin alternative for grid layout */
+}
+
+/* All direct child divs in wrapper (not as wall child of childs, like grandsons, granddaughters)  */
+.wrapper > div {
+  background: #eee; /* Light Grey */
+  padding: 1em;
+}
+
+/* All direct child divs in wrapper that are even by order number, like 1,3,5,etc.. */
+/* In this scenario it will act like every other element will have diferent color of grey */
+.wrapper > div:nth-child(odd) {
+  background: #ddd;
+}

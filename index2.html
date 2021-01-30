@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid</title>
+    <style>
+      .wrapper {
+        display: grid;
+
+        /* stands for split elements in 3 parts, from which second one is biggest(more important) */
+        /* grid-template-columns: 1fr 2fr 1fr; */
+
+        /* fr stands for fraction/fractional and it's highly recommended in grid over px and percentages(no problems with margins) */
+
+        /* stands for split elements in four parts, same as 1fr 1fr 1fr 1fr */
+        /* grid-template-columns: repeat(4, 1fr); */
+
+        /* stands for repeat first and second part of elements 4 times */
+        /* grid-template-columns: repeat(4, 1fr 2fr); */
+
+        /* stands for split elements in 3 parts, same as 1fr 1fr 1fr*/
+        grid-template-columns: repeat(3, 1fr);
+
+        /* makes spacing between columns  */
+        /* grid-column-gap: 1em; */
+
+        /* makes spacing between rows */
+        /* grid-row-gap: 1em; */
+
+        /* combines rows and columns spacing */
+        grid-gap: 1em;
+
+        /* grid-auto-rows: 100px; */
+        /* grid-auto-columns is by default*/
+
+        /* if content will be more than 100px it will adjust automatically */
+        grid-auto-rows: minmax(100px, auto);
+      }
+
+      .nested {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        /* specifies ech grid rows size */
+        grid-auto-rows: 70px;
+
+        /* makes specified spacing between elements */
+        grid-gap: 1em;
+      }
+
+      .wrapper > div {
+        background: #eee; /* Light Grey */
+        padding: 1em;
+      }
+
+      .wrapper > div:nth-child(odd) {
+        background: #ddd;
+      }
+
+      .nested > div {
+        border: #333 1px solid;
+        padding: 1em;
+      }
+    </style>
+  <body>
+    <div class="wrapper">
+      <div>Lorem ipsum dolor sit.</div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis similique assumenda excepturi! Repudiandae minus molestias modi, pariatur est vitae atque voluptas aperiam. Quibusdam consequuntur sint deleniti sequi nihil culpa, deserunt aspernatur atque blanditiis tenetur aliquid quae ea quas id cupiditate.</div>
+      <div class="nested">
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+        <div>Lorem</div>
+      </div>
+      <div>Lorem ipsum dolor sit.</div>
+      <div>Lorem ipsum dolor sit.</div>
+      <div>Lorem ipsum dolor sit.</div>
+      <div>Lorem ipsum dolor sit.</div>
+    </div>
+  </body>
+</html>
